@@ -1,7 +1,24 @@
 # ~/.bashrc: executed for non-login shells.
 
 # If not running interactively, just export PATH
-PATH=.:$HOME/bin:$PATH
+#PATH=.:$HOME/bin:$PATH
+
+export PATH=~Jing.Liu/bin:$PATH
+
+
+#This is used to make the prompt line look nice
+git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
+HOST='\033[02;36m\]\h'; HOST=' '$HOST
+TIME='\033[01;31m\]\t \033[01;32m\]'
+LOCATION=' \033[01;34m\]`pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(/[^/]\{1,\}/[^/]\{1,\}\)/\{0,1\}#\1_\2#g"`'
+BRANCH=' \033[00;33m\]$(git_branch)\[\033[00m\]\n\$ '
+
+PS1=$TIME$USER$HOST$LOCATION$BRANCH
+PS2='\[\033[01;36m\]>'
+#---------------------------------------------
+
+
+
 [ -z "$PS1" ] && return
 
 stty -ixon # disable C-q C-s
@@ -54,12 +71,14 @@ cyan="\[\e[0;36m\]"
 CYAN="\[\e[1;36m\]"
 PLAIN="\[\e[0m\]"
 
-if [ "$color_prompt" = yes ]; then
-  PS1="${GREEN}\u@\H:${BLUE}\w\n${MAGENTA}[\!]${PLAIN} "
-else
-  PS1='\u@\H:\w\n[\!] '
-fi
-unset color_prompt
+
+#JIng's original color prompt
+#if [ "$color_prompt" = yes ]; then
+#  PS1="${GREEN}\u@\H:${BLUE}\w\n${MAGENTA}[\!]${PLAIN} "
+#else
+#  PS1='\u@\H:\w\n[\!] '
+#fi
+#unset color_prompt
 
 # set screen titles automatically
 # PROMPT_COMMAND='echo -n -e "\033k\033\\"'
