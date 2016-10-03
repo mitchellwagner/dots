@@ -148,7 +148,7 @@ export LC_ALL="en_US.UTF-8"
 
 export TEXMFHOME=~/.texmf
 
-export LD_LIBRARY_PATH=$HOME/lib
+export LD_LIBRARY_PATH=Jing.Liu/lib:$PATH
 
 export MANPATH=~/man:$MANPATH
 
