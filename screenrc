@@ -111,40 +111,40 @@ termcapinfo xterm* 'k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS'
 escape ^Qq # change escape key from ^a to ^q
 
 #remove some stupid / dangerous key bindings
-bind k
-bind ^k
-bind .
-bind ^\
-bind \\
-bind ^h
-bind h
+#bind k
+#bind ^k
+#bind .
+#bind ^\
+#bind \\
+#bind ^h
+#bind h
 #make them better
-bind 'K' kill
-bind 'I' login on
-bind 'O' login off
-bind '}' history
+#bind 'K' kill
+#bind 'I' login on
+#bind 'O' login off
+#bind '}' history
 
-bind c screen 1         # Window numbering starts at 1, not 0.
+#bind c screen 1         # Window numbering starts at 1, not 0.
 #bind ^c screen 1
 
-bindkey -k k1 select 1
-bindkey -k k2 select 2
-bindkey -k k3 select 3
-bindkey -k k4 select 4
-bindkey -k k5 select 5 
-bindkey -k k6 select 6
-bindkey -k k7 select 7
-bindkey -k k8 screen 1
+#bindkey -k k1 select 1
+#bindkey -k k2 select 2
+#bindkey -k k3 select 3
+#bindkey -k k4 select 4
+#bindkey -k k5 select 5 
+#bindkey -k k6 select 6
+#bindkey -k k7 select 7
+#bindkey -k k8 screen 1
 #bindkey -k k9 windowlist -b
 #bindkey -k k; screen 1
 
-bindkey -k k9 eval "copy" "stuff ^u"
-bindkey -k k; eval "copy" "stuff ^d"
-bindkey -m -k k9 stuff ^u
-bindkey -m -k k; stuff ^d
+#bindkey -k k9 eval "copy" "stuff ^u"
+#bindkey -k k; eval "copy" "stuff ^d"
+#bindkey -m -k k9 stuff ^u
+#bindkey -m -k k; stuff ^d
 
-bindkey -k F1 prev
-bindkey -k F2 next
+#bindkey -k F1 prev
+#bindkey -k F2 next
 
 # Yet another hack:
 # Prepend/append register [/] to the paste if ^a^] is pressed.
