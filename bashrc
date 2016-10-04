@@ -17,6 +17,13 @@ PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
 #---------------------------------------------
 
+#To enable ROOT using a more up to date version.
+export ROOTSYS=~Jing.Liu/src/root5.34.36/
+export PATH=$ROOTSYS/bin:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+#---------------------------------------------
+
+
 
 
 [ -z "$PS1" ] && return
