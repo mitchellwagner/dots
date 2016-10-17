@@ -79,16 +79,7 @@ CYAN="\[\e[1;36m\]"
 PLAIN="\[\e[0m\]"
 
 
-#JIng's original color prompt
-#if [ "$color_prompt" = yes ]; then
-#  PS1="${GREEN}\u@\H:${BLUE}\w\n${MAGENTA}[\!]${PLAIN} "
-#else
-#  PS1='\u@\H:\w\n[\!] '
-#fi
-#unset color_prompt
-
-# set screen titles automatically
-# PROMPT_COMMAND='echo -n -e "\033k\033\\"'
+#Enable color propmt
 case "$TERM" in
   screen)
     PROMPT_COMMAND='echo -n -e "\033k\033\\"'
@@ -116,16 +107,6 @@ alias la='ls -Ah'
 alias df='df -h'
 alias du='du -h'
 
-alias sd='screen -D -RR'
-alias sw='screen -wipe'
-alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
-# refresh display setting for old screen session
-if [ ${#STY} -gt 0 ]; then
-  export DISPLAY=`cat ~/.display`
-else
-  echo $DISPLAY > ~/.display
-fi
-
 alias micro='TERM=xterm-256color micro'
 alias ev='emacs -nw'
 
@@ -134,18 +115,6 @@ alias rbq='root -b -q'
 
 alias news='newsbeuter -q'
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#  . /etc/bash_completion
-#fi
-#
-#alias t='task'
-#if [ -f ~/src/task/scripts/bash/task.sh ]; then
-#  source ~/src/task/scripts/bash/task.sh
-#  complete -o nospace -F _task t
-#fi
 
 export WWW_HOME=~/.w3m/bookmark.html
 export LYNX_CFG=~/.lynx/lynx.cfg
@@ -155,7 +124,7 @@ export LC_ALL="en_US.UTF-8"
 
 export TEXMFHOME=~/.texmf
 
-export LD_LIBRARY_PATH=Jing.Liu/lib:$PATH
+#export LD_LIBRARY_PATH=Jing.Liu/lib:$PATH
 
 export MANPATH=~/man:$MANPATH
 
