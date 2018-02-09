@@ -5,16 +5,14 @@
 
 export PATH=~Jing.Liu/bin:$PATH
 
-
 #This is used to make the prompt line look nice
-git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
-HOST='\033[02;36m\]\h'; HOST=' '$HOST
-TIME='\033[01;31m\]\t \033[01;32m\]'
-LOCATION=' \033[01;34m\]`pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(/[^/]\{1,\}/[^/]\{1,\}\)/\{0,1\}#\1_\2#g"`'
-BRANCH=' \033[00;33m\]$(git_branch)\[\033[00m\]\n\$ '
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
 
-PS1=$TIME$USER$HOST$LOCATION$BRANCH
-PS2='\[\033[01;36m\]>'
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 #---------------------------------------------
 
 #To enable ROOT using a more up to date version.
@@ -79,14 +77,6 @@ CYAN="\[\e[1;36m\]"
 PLAIN="\[\e[0m\]"
 
 
-#Enable color propmt
-case "$TERM" in
-  screen)
-    PROMPT_COMMAND='echo -n -e "\033k\033\\"'
-    ;;
-  *)
-    ;;
-esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -141,4 +131,3 @@ l () {
 
 export ROVER_SHELL='rosh'
 
-if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi

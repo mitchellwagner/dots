@@ -9,7 +9,7 @@ attrcolor u "-u R"
 # make the shell in every window a non-login shell, 
 # make sure your bash startup file are set properly
 # I have to comment out this to make chdir work
-#shell -$SHELL
+shell -$SHELL
 
 # the following is needed to set title automatically:
 shelltitle "] |Shell"
@@ -127,21 +127,21 @@ escape ^Qq # change escape key from ^a to ^q
 #bind c screen 1         # Window numbering starts at 1, not 0.
 #bind ^c screen 1
 
-#bindkey -k k1 select 1
-#bindkey -k k2 select 2
-#bindkey -k k3 select 3
-#bindkey -k k4 select 4
-#bindkey -k k5 select 5 
-#bindkey -k k6 select 6
-#bindkey -k k7 select 7
-#bindkey -k k8 screen 1
-#bindkey -k k9 windowlist -b
-#bindkey -k k; screen 1
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
+bindkey -k k5 select 5 
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 screen 1
+bindkey -k k9 windowlist -b
+bindkey -k k; screen 1
 
-#bindkey -k k9 eval "copy" "stuff ^u"
-#bindkey -k k; eval "copy" "stuff ^d"
-#bindkey -m -k k9 stuff ^u
-#bindkey -m -k k; stuff ^d
+bindkey -k k9 eval "copy" "stuff ^u"
+bindkey -k k; eval "copy" "stuff ^d"
+bindkey -m -k k9 stuff ^u
+bindkey -m -k k; stuff ^d
 
 #bindkey -k F1 prev
 #bindkey -k F2 next
@@ -157,9 +157,9 @@ chdir      # go to home dir
 
 # default windows
 
-screen 0
-screen 1 /usr/share/mc/bin/mc-wrapper.sh
-screen 2 local 0 #emacs
+# screen 0
+# screen 1 /usr/share/mc/bin/mc-wrapper.sh
+# screen 2 local 0 #emacs
 screen -t local 0
 
 # screen -t local 0
