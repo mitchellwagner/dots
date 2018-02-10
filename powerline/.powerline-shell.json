@@ -1,0 +1,21 @@
+{
+  "segments": [
+    "hostname",
+    "battery",
+    "ssh",
+    "cwd",
+    "read_only",
+    "git",
+    "newline",
+    "time",
+    "ssh",
+    "root"
+  ],
+  "cwd": {
+    "max_depth": 3
+  },
+  "vcs": {
+    "show_symbol": "true"
+  },
+  "theme": "~/github/dots/powerline/default.py"
+}
